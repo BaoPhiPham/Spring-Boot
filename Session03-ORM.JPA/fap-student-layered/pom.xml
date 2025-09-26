@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.giaolang.superapp</groupId>
-    <artifactId>fap</artifactId>
+    <groupId>com.chilllearn.supperapp</groupId>
+    <artifactId>fap-student-layered</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -19,8 +19,15 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>12.10.0.jre11</version>
+            <version>13.2.0.jre11</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
@@ -36,8 +43,6 @@
             <artifactId>hibernate-core</artifactId>
             <version>6.6.15.Final</version>
         </dependency>
-    </dependencies>
-    <!-- THI PE, BẮT BUỘC PHẢI BÁO GIÁM THỊ ĐỂ ĐC VÀO WIFI TRƯỜNG ĐỂ
-     DOWNLOAD CÁC DEPENDENCY! BẮT BUỘC!!! -->
 
+    </dependencies>
 </project>

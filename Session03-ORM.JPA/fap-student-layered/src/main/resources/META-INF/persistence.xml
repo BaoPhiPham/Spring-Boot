@@ -2,9 +2,10 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-    <persistence-unit name="com.giaolang.superapp-PU" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="com.chilllearn.superapp-PU" transaction-type="RESOURCE_LOCAL">
+        <!-- PU là persistence Unit       -->
         <!-- Khai báo các entity class để map xuống table -->
-        <!--        <class>com.giaolang.superpapp.entity.Student</class>-->
+        <!--        <class>com.chilllearn.superpapp.entity.Student</class>-->
 
         <!-- Cấu hình kết nối CSDL -->
         <properties>
@@ -17,7 +18,7 @@
 
             <!-- Tài khoản đăng nhập SQL Server -->
             <property name="jakarta.persistence.jdbc.user" value="sa"/>
-            <property name="jakarta.persistence.jdbc.password" value="sa123456"/>
+            <property name="jakarta.persistence.jdbc.password" value="12345"/>
 
             <!-- Chỉ định Hibernate làm provider nối tới SQLServer -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
@@ -26,7 +27,7 @@
             "none": Không làm gì cả – không kiểm tra, không tạo, không cập nhật gì cả
             "validate": Kiểm tra bảng có sẵn có khớp với entity không – nếu lệch thì báo lỗi
             "update": Cập nhật schema: tạo thêm bảng/cột nếu thiếu, không xoá gì cả
-            "create": Xoá toàn bộ bảng cũ rồi tạo bảng mới từ đầu
+            "create": Xoá toàn bộ bảng cũ rồi tạo bảng mới từ đầu, chỉ nên thử nghiệm trong môi trường dev vì 1 khi release lên production chạy sẽ mất hết data của khách hàng
             "create-drop": Tạo bảng khi chạy app, xoá toàn bộ bảng khi app dừng
             "drop": (Hiếm dùng) Xoá toàn bộ bảng khi app khởi động – không tạo lại bảng -->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
@@ -38,4 +39,4 @@
     </persistence-unit>
 </persistence>
 
-<!-- LƯU Ý: FILE CẤU HÌNH PHẢI NẰM Ở ĐÚNG THƯ MỤC resources/META-INF/ -->
+        <!-- LƯU Ý: FILE CẤU HÌNH PHẢI NẰM Ở ĐÚNG THƯ MỤC resources/META-INF/ -->
