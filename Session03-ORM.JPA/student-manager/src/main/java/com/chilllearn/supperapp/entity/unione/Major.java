@@ -6,8 +6,8 @@ import org.hibernate.engine.internal.Cascade;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "Major")
+//@Entity
+//@Table(name = "Major")
 public class Major {
 
     @Id

@@ -2,8 +2,8 @@ package com.chilllearn.supperapp.entity.unimany;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "Student")
+//@Entity
+//@Table(name = "Student")
 public class Student {
 
     @Id
@@ -24,14 +24,25 @@ public class Student {
     //Cần 1 tk giúp ánh xạ 2 thế giới để cho nó tương thích: JPA HIBERNATE
     @ManyToOne
     @JoinColumn(name = "MajorId")
-    private Major majorId;//làm sao biến này đc set value để nói rằng SV nào này thuộc chuyên ngành nào
+    private Major major;//làm sao biến này đc set value để nói rằng SV nào này thuộc chuyên ngành nào
     //=> câu hỏi i chang, cùng logic giuống như bên major
+    //=> làm hàm setMajor() để đưa 1 chuyên ngành chi sv đăng ký vào
 
     public Student(String id, String name, int yob, double gpa) {
         this.id = id;
         this.name = name;
         this.yob = yob;
         this.gpa = gpa;
+    }
+    //có thể đưa Major vào CONSTRUCTOR cx đc nhưng lưu  là nếu sau này có hơn 20 field thì khai báo 20 field trong CTOR thì ko nên - đưa qua 1 nhìu thông tin ban đầu, có thể dùng set để giải quyết
+    //Có khi sau này ko dùng CTOR có tham số mà chỉ dùng CTOR rojng64 tạo OBJ trc rồi set từ từ các field, có thông tin thì set
+
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+
+    public Major getMajor() {
+        return this.major;
     }
 
     public Student() {
